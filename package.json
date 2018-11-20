@@ -1,0 +1,19 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "My blog",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylvestertarnowski/node-blog.git"
+  },
+  "author": "Sylvester Tarnowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sylvestertarnowski/node-blog/issues"
+  },
+  "homepage": "https://github.com/sylvestertarnowski/node-blog#readme"
+}
