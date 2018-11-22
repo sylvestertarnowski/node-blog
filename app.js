@@ -3,6 +3,7 @@ const express       = require("express");
 const bodyParser    = require("body-parser");
 const mongoose      = require('mongoose');
 
+
 const app           = express();
 
 const port = 3000;
@@ -11,8 +12,7 @@ mongoose.connect("mongodb://localhost:27017/node-blog", {useNewUrlParser: true})
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 //Mongoose schema setup
 
