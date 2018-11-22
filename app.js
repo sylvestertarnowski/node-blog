@@ -10,6 +10,7 @@ const port = 3000;
 
 mongoose.connect("mongodb://localhost:27017/node-blog", { useNewUrlParser: true });
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
