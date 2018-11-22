@@ -1,22 +1,27 @@
 // dependancies
-const express       = require("express");
-const bodyParser    = require("body-parser");
-const mongoose      = require('mongoose');
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require('mongoose');
 
 
-const app           = express();
+const app = express();
 
 const port = 3000;
 
-mongoose.connect("mongodb://localhost:27017/node-blog", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/node-blog", { useNewUrlParser: true });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 //Mongoose schema setup
 
-var blogSchema = new mongoose.Schema({ body: String });
+var blogSchema = new mongoose.Schema({
+    title: String,
+    body: String, 
+    image: String,
+    created: {type: Date, default: Date.now}
+});
 var Blog = mongoose.model('Blog', blogSchema);
 
 //Routes
@@ -26,12 +31,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/blogs", (req, res) => {
-    res.send('blogs');
+    res.render('blogs');
 });
+
+app.get("/blogs/new", (req, res) => {
+    res.render("new");
+})
 
 app.post("/blogs", (req, res) => {
     Blog.create(req.body.blog, (err, newBlog) => {
-        if(err){
+        if (err) {
             console.log(err);
         } else {
             res.redirect("/blogs");
