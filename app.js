@@ -1,7 +1,8 @@
-// dependancies
+// dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
+const expressSanitizer = require('express-sanitizer');
 
 
 const app = express();
