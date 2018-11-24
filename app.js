@@ -20,9 +20,9 @@ app.set('view engine', 'ejs');
 
 var blogSchema = new mongoose.Schema({
     title: String,
-    body: String, 
+    body: String,
     image: String,
-    created: {type: Date, default: Date.now}
+    created: { type: Date, default: Date.now }
 });
 var Blog = mongoose.model('Blog', blogSchema);
 
