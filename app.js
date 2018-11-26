@@ -33,7 +33,14 @@ app.get("/", (req, res) => {
 });
 
 app.get("/blogs", (req, res) => {
-    res.render('blogs');
+    Blog.find({}, function(err, blogs){
+        if(err){
+            console.log(err);
+            res.send(err);
+        } else {
+            res.render("blogs", {blogs: blogs});
+        }
+    });
 });
 
 app.get("/blogs/new", (req, res) => {
@@ -41,11 +48,24 @@ app.get("/blogs/new", (req, res) => {
 })
 
 app.post("/blogs", (req, res) => {
+    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.create(req.body.blog, (err, newBlog) => {
         if (err) {
             console.log(err);
+            res.send(err);
         } else {
             res.redirect("/blogs");
+        }
+    });
+});
+
+app.get("/blogs/:id", (req, res) => {
+    Blog.findById(req.params.id, (err, foundBlog) => {
+        if(err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            res.render("show", {blog: foundBlog});
         }
     });
 });
