@@ -71,6 +71,10 @@ app.get("/blogs/:id", (req, res) => {
     });
 });
 
+app.get("/portfolio", (req, res) => {
+    res.render("portfolio");
+});
+
 app.listen(port, () => {
     console.log('We are live on ' + port);
 });
