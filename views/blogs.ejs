@@ -2,17 +2,18 @@
 
 <div class="container">
     <div class="jumbotron"><h1>Blogs list page</h1></div>
-    <div class="row">
-        <div class="col-md-12">
-            <% blogs.forEach(function(blog) { %>
+    <% blogs.forEach(function(blog) { %>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="container">
-                    <div id="title"> <%= blog.title %> </div>
-                    <div id="image"> <%= blog.image %> </div>
+                    <div id="title"> <h3><%= blog.title %></h3> </div>
+                    <div> <img class="img-fluid" alt="Responsive image" src ="<%= blog.image %>"> </div>
                     <div id="body"> <%= blog.body %> </div>
+                    <button class="btn btn-default"><a href="/blogs/<%= blog._id %>">View Blog</a></button>
                 </div>
-            <% }); %>
-        </div>    
-    </div>
+            </div>    
+        </div>
+    <% }); %>
 </div>
 
 <% include partials/footer %>

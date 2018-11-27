@@ -14,6 +14,7 @@ mongoose.connect("mongodb://localhost:27017/node-blog", { useNewUrlParser: true 
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressSanitizer());
 app.set('view engine', 'ejs');
 
 //Mongoose schema setup
