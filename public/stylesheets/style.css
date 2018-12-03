@@ -2,3 +2,6 @@
     object-fit: contain;
 }
 
+#blogBody {
+    min-height: 200px;
+}
