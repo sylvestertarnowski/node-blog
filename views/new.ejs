@@ -2,11 +2,24 @@
 
 <h1>This is where add blog form goes!</h1>
 
-<form action="/blogs" method="POST">
-    <input type="text" name="blog[title]" placeholder="title">
-    <input type="text" name="blog[image]" placeholder="image">
-    <textarea name="blog[body]"></textarea>
-    <input type="submit" value="Add Post"/>
-</form>
+<div class="containter">
+    <form action="/blogs" method="POST">
+        <div class="form-group">
+            <label for="blogTitle">Blog title</label>
+            <input type="text" name="blog[title]" placeholder="title" class="form-control" id="blogTitle">
+        </div>
+        <div class="form-group">
+            <label for="blogImage">Image URL</label>
+            <input type="text" name="blog[image]" placeholder="image" class="form-control" id="blogImage">
+            <small id="blogImageHelp" class="form-text text-muted">Please enter a valid, direct image URL here.</small>
+        </div>
+        <div class="form-group">
+            <label for="blogBody">Blog Entry</label>
+            <small id="blogBodyHelp" class="form-text text-muted">You can safely use HTML markup for styling.</small>
+            <textarea name="blog[body]" class="form-control" id="blogBody"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 
 <% include partials/footer %>
