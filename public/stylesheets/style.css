@@ -5,3 +5,12 @@
 #blogBody {
     min-height: 200px;
 }
+
+#footerStyle {
+    background-color: rgb(34, 35, 41);
+    color: rgb(225, 226, 235);
+}
+
+.row {
+    padding: 40px;
+}
