@@ -11,6 +11,14 @@
     color: rgb(225, 226, 235);
 }
 
+#landing-page {
+    background: url("../images/landing-background.jpg");
+    background-size: cover;
+    min-height: 700px;
+    color: white;
+}
+
 .row {
-    padding: 40px;
+    padding: 20px;
+    text-align: center;
 }
