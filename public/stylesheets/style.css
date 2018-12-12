@@ -12,10 +12,15 @@
 }
 
 #landing-page {
-    background: url("../images/landing-background.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45)),url("../images/landing-background.jpg");
     background-size: cover;
     min-height: 700px;
     color: white;
+}
+
+.btn-success {
+    width: 150px;
+    margin: 0 auto;
 }
 
 .row {
