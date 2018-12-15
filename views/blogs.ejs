@@ -4,14 +4,15 @@
     <div class="jumbotron"><h1>Teaching Myself Code</h1></div>
     <% blogs.forEach(function(blog) { %>
         <div class="row">
-            <div class="col-md-12">
-                <div class="container">
-                    <div id="title"> <h3><%= blog.title %></h3> </div>
-                    <div> <img class="img-fluid" alt="Responsive image" src ="<%= blog.image %>"> </div>
-                    <div id="body"> <%= blog.body %> </div>
-                    <button class="btn btn-default"><a href="/blogs/<%= blog._id %>">View Blog</a></button>
-                </div>
-            </div>    
+
+            <div class="col-md-6">
+                <img class="img-thumbnail" alt="Generic placeholder image" src ="<%= blog.image %>" id="image"> 
+            </div>
+            <div class="col-md-6">
+                <h5 id="title"><%= blog.title %></h5>
+                <div id="body"> <%= blog.body %> </div>
+                <div><a href="/blogs/<%= blog._id %>"><button class="btn btn-default">View Blog</button></a></div>
+            </div>
         </div>
     <% }); %>
 </div>

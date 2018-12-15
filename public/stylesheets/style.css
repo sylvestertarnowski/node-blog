@@ -1,5 +1,5 @@
 #image {
-    object-fit: contain;
+    size: cover;
 }
 
 #blogBody {
@@ -17,7 +17,7 @@
 }
 
 #landing-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.45)),url("../images/landing-background.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.65)),url("../images/landing-background.jpg");
     background-size: cover;
     min-height: 700px;
     color: white;
